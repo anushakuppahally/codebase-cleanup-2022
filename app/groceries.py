@@ -8,22 +8,18 @@
 import os
 
 from app.utils import to_usd #from foldername.filename import __
+from pandas import read_csv
 
 
 # checks to see if a products.csv file exists. If not, it uses the default
 if os.path.isfile(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")) == True:
     print("USING CUSTOM PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "products.csv")
+    products = read_csv(os.path.join(os.path.dirname(__file__), "..", "data", "products.csv"))
 else:
     print("USING DEFAULT PRODUCTS CSV FILE...")
-    csv_filepath = os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv")
-
-
-
-from pandas import read_csv
+    products = read_csv(os.path.join(os.path.dirname(__file__), "..", "data", "default_products.csv"))
 
 #reads the csv file into products variable
-products = read_csv(csv_filepath)
 #pandas transforms the data into a list of dictionaries
 products = products.to_dict('records')
 
