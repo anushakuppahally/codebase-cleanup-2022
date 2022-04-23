@@ -15,7 +15,7 @@ ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
 # docs: https://www.alphavantage.co/documentation/#unemployment
 url = f"https://www.alphavantage.co/query?function=UNEMPLOYMENT&apikey={ALPHAVANTAGE_API_KEY}"
-fetch_data(url)
+parsed_response = fetch_data(url)
 data = parsed_response["data"]
 latest = data[0]
 #print(parsed_response)

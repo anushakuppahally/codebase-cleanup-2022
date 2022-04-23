@@ -13,11 +13,11 @@ requests
 pandas
 
 # email:
-#sendgrid==6.6.0 # this version may be older than current docs
+sendgrid==6.6.0 # this version may be older than current docs
 
 # dataviz:
 plotly
-#kaleido # for chart exports
+kaleido # for chart exports
 
 # quality control / code mgmt:
 pytest
