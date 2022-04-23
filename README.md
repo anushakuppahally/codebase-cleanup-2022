@@ -38,6 +38,14 @@ SENDGRID_API_KEY="SG...."
 ```
 
 
+## Testing
+
+Run tests:
+
+``` sh
+pytest
+```
+
 ## Usage
 
 Run the game:

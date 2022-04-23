@@ -8,6 +8,7 @@ import json
 from dotenv import load_dotenv
 import requests
 from app.utils import to_usd
+from app.fetch_data import fetch_data
 
 load_dotenv()
 
@@ -15,8 +16,7 @@ ALPHAVANTAGE_API_KEY = os.getenv("ALPHAVANTAGE_API_KEY", default="demo")
 
 symbol = input("Please input a crypto symbol (default: 'BTC'): ") or "BTC"
 url = f"https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&market=USD&symbol={symbol}&apikey={ALPHAVANTAGE_API_KEY}"
-response = requests.get(url)
-parsed_response = json.loads(response.text)
+parsed_response = fetch_data(url)
 #print(parsed_response)
 #breakpoint()
 
